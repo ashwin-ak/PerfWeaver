@@ -1,6 +1,12 @@
 # PerfWeaver
 
+[![npm version](https://img.shields.io/npm/v/perfweaver.svg)](https://www.npmjs.com/package/perfweaver) [![Build Status](https://img.shields.io/github/actions/workflow/status/ashwinkumarkulkarni/perfweaver/ci.yml?branch=main)](https://github.com/ashwinkumarkulkarni/perfweaver/actions) [![License](https://img.shields.io/npm/l/perfweaver.svg)](LICENSE)
+
 Convert browser HAR (HTTP Archive) traffic into structured load-testing scripts for multiple performance testing tools.
+
+> **GitHub:** https://github.com/ashwinkumarkulkarni/perfweaver   
+> **npm:** https://www.npmjs.com/package/perfweaver
+
 
 ## Features
 
@@ -38,8 +44,25 @@ Generated Load Test Scripts
 
 ## Installation
 
+Install from npm:
+
 ```bash
 npm install perfweaver
+```
+
+You can also use it via npx without installation:
+
+```bash
+npx perfweaver analyze example.har
+```
+
+For development:
+
+```bash
+git clone https://github.com/ashwinkumarkulkarni/perfweaver.git
+cd perfweaver
+npm install
+npm run build
 ```
 
 Or for development:
@@ -142,6 +165,16 @@ tools:
 ## Usage Examples
 
 See the [examples](./examples) directory for sample HAR files and generated scripts.
+
+## Documentation
+
+Complete user and developer guides are available in the `docs/` folder:
+
+- [Quick Start](docs/QUICKSTART.md)
+- [API & CLI Reference](docs/DOCUMENTATION.md)
+- [Performance Tuning](docs/PERFORMANCE_TUNING.md)
+- [Developer Guide](docs/DEVELOPMENT.md)
+- [Architecture Overview](docs/ARCHITECTURE.md)
 
 ## Contributing
 
