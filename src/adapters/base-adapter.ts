@@ -1,4 +1,4 @@
-import { Transaction, LoadModelConfig } from '../../types';
+import { Transaction, LoadModelConfig } from '../types';
 
 /**
  * Base interface for all tool adapters

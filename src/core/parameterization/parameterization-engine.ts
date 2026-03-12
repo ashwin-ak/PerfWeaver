@@ -144,10 +144,13 @@ export class ParameterizationEngine {
   private usesVariable(request: RequestNode, variableName: string): boolean {
     const varRef = `${variableName}`;
     
+    const headersCheck = Object.values(request.headers).some(h => (h || '').includes(varRef));
+    const payloadCheck = request.payload ? request.payload.includes(varRef) : false;
+    
     return (
       request.url.includes(varRef) ||
-      Object.values(request.headers).some(h => h.includes(varRef)) ||
-      (request.payload && request.payload.includes(varRef))
+      headersCheck ||
+      payloadCheck
     );
   }
 

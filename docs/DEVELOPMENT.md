@@ -103,7 +103,7 @@ Replaces variable values with ${VAR} references.
 - `ParameterizationEngine`: Variable replacement
 
 **Key Methods:**
-- `parameterizeTransactions()`: Replace values in all transactions
+- `parameterizeTransactions(transactions, correlationVariables?)`: Replace values in all transactions; since v0.1.0 you must pass an array of correlation variables (can be empty).
 - `parameterizeRequest()`: Replace values in single request
 - `generateParamScript()`: Output config in various formats
 
@@ -219,6 +219,11 @@ Test individual components:
 ```bash
 npm test -- tests/unit/core.test.ts
 ```
+
+> **Note:** Jest runs using Node’s resolution rules and doesn’t honor `tsconfig.json`’s
+> `baseUrl` or path aliases. Always use relative imports (e.g. `../../core/har-parser`)
+> within test files to avoid "module not found" errors.
+
 
 ### Integration Tests (`tests/integration/`)
 

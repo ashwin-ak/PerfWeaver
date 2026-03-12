@@ -1,7 +1,7 @@
-import { HARParser } from '../src/core/har-parser';
-import { BehaviorModelingEngine } from '../src/core/behavior-model';
-import { TransactionDetectionEngine } from '../src/core/correlation-engine';
-import { RequestNode } from '../src/types';
+import { HARParser } from '../../src/core/har-parser';
+import { BehaviorModelingEngine } from '../../src/core/behavior-model';
+import { TransactionDetectionEngine } from '../../src/core/correlation-engine';
+import { RequestNode } from '../../src/types';
 
 describe('HAR Parser', () => {
   it('should parse HAR data correctly', () => {

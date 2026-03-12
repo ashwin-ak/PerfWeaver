@@ -1,16 +1,16 @@
 import * as chalk from 'chalk';
-import { HARParser, loadHARFile } from '../core/har-parser';
-import { ConfigurationManager } from '../config';
+import { HARParser, loadHARFile } from '../../core/har-parser';
+import { ConfigurationManager } from '../../config';
 import {
   JMeterAdapter,
   K6Adapter,
   GatlingAdapter,
   LocustAdapter,
   PlaywrightAdapter,
-} from '../adapters';
-import { BehaviorModelingEngine } from '../core/behavior-model';
-import { TransactionDetectionEngine } from '../core/correlation-engine';
-import { ThinkTimeModelingEngine } from '../core/think-time';
+} from '../../adapters';
+import { BehaviorModelingEngine } from '../../core/behavior-model';
+import { TransactionDetectionEngine } from '../../core/correlation-engine';
+import { ThinkTimeModelingEngine } from '../../core/think-time';
 
 export const command = 'generate <tool> <har>';
 export const describe = 'Generate load testing script from HAR file';

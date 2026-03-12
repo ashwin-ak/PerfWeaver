@@ -131,24 +131,26 @@ export class BehaviorModelingEngine {
 
       if (block instanceof Array || block.id.startsWith('parallel')) {
         merged.push(block);
-      } else {
+      } else if ('thinkTimes' in block) {
         // It's a sequential block
-        let currentGroup: RequestNode[] = [...block.requests];
-        let currentThinkTimes = { ...block.thinkTimes };
+        const seqBlock = block as SequentialBlock;
+        let currentGroup: RequestNode[] = [...seqBlock.requests];
+        let currentThinkTimes = { ...seqBlock.thinkTimes };
 
         // Check if we can merge with next sequential blocks
         let j = i + 1;
         while (j < blocks.length) {
           const nextBlock = blocks[j];
 
-          if (nextBlock.id.startsWith('seq')) {
+          if ('thinkTimes' in nextBlock && nextBlock.id.startsWith('seq')) {
+            const nextSeqBlock = nextBlock as SequentialBlock;
             const lastRequest = currentGroup[currentGroup.length - 1];
-            const nextRequest = nextBlock.requests[0];
+            const nextRequest = nextSeqBlock.requests[0];
             const thinkTime = nextRequest.startTime - lastRequest.endTime;
 
             if (thinkTime <= maxThinkTime) {
-              currentGroup.push(...nextBlock.requests);
-              Object.assign(currentThinkTimes, nextBlock.thinkTimes);
+              currentGroup.push(...nextSeqBlock.requests);
+              Object.assign(currentThinkTimes, nextSeqBlock.thinkTimes);
               j++;
               i++;
             } else {

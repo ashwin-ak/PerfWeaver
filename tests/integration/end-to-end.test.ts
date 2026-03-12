@@ -115,7 +115,8 @@ describe('End-to-End Workflow', () => {
 
     // Step 5: Parameterize
     const paramEngine = new ParameterizationEngine();
-    const parameterized = paramEngine.parameterizeTransactions(transactions);
+    const correlationVariables: any[] = [];
+    const parameterized = paramEngine.parameterizeTransactions(transactions, correlationVariables);
 
     expect(parameterized.length).toBeGreaterThan(0);
 

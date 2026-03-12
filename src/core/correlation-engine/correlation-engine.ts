@@ -93,9 +93,9 @@ export class XPathExtractor implements Extractor {
  */
 export class CorrelationEngine {
   private extractors: Map<string, Extractor> = new Map([
-    ['json', new JSONExtractor()],
-    ['regex', new RegexExtractor()],
-    ['xpath', new XPathExtractor()],
+    ['json', new JSONExtractor() as Extractor],
+    ['regex', new RegexExtractor() as Extractor],
+    ['xpath', new XPathExtractor() as Extractor],
   ]);
 
   private commonPatterns: Record<string, Record<string, string>> = {
