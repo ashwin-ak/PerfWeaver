@@ -1,0 +1,152 @@
+# PerfWeaver Configuration Example
+
+# Resource filtering
+filters:
+  ignoreExtensions:
+    - png
+    - jpg
+    - jpeg
+    - gif
+    - webp
+    - svg
+    - css
+    - woff
+    - woff2
+    - ttf
+    - otf
+    - eot
+  
+  ignoreResourceTypes:
+    - image
+    - stylesheet
+    - font
+    - media
+    - manifest
+  
+  # Patterns to completely ignore (regex)
+  ignorePatterns:
+    - .*analytics.*
+    - .*tracking.*
+    - .*beacon.*
+
+# Parallel request detection
+parallelDetection:
+  # Time window in ms for requests to be considered parallel
+  overlapThresholdMs: 40
+  
+  # Minimum number of parallel requests to create a block
+  minParallelRequests: 2
+
+# Automatic correlation engine configuration
+correlation:
+  enableAutoCorrelation: true
+  
+  # Correlation extractors to use
+  extractors:
+    - type: json
+      # JSON path patterns to extract
+      patterns:
+        - ".*token.*"
+        - ".*id.*"
+        - ".*session.*"
+    
+    - type: regex
+      # Regex patterns for extraction
+      patterns:
+        - '(?<!\\)(?:"([^"]+)":)(?=[a-zA-Z0-9])'
+    
+    - type: xpath
+      # XPath expressions for XML responses
+      patterns:
+        - "//token"
+        - "//@id"
+
+# Parameterization settings
+parameterization:
+  # Environment variables to parameterize
+  envVars:
+    - BASE_URL
+    - API_BASE_URL
+    - AUTH_TOKEN
+    - USER_ID
+    - TENANT_ID
+    - SESSION_ID
+  
+  # CSV dataset files for data-driven testing
+  datasets: []
+
+# Think time modeling
+thinkTime:
+  # Enable automatic think time insertion
+  enable: true
+  
+  # Percentile to use for think time (50, 75, 90, 95, 99)
+  percentile: 50
+  
+  # Minimum think time in ms to include
+  minThinkTime: 100
+  
+  # Maximum think time in ms (cap outliers)
+  maxThinkTime: 30000
+
+# Load model configuration
+loadModel:
+  # Thread pool size
+  threadCount: 10
+  
+  # Ramp-up time in seconds
+  rampUpTime: 60
+  
+  # Test duration in seconds
+  duration: 300
+  
+  # Number of iterations per thread
+  iterations: 1
+  
+  # Connection timeout in ms
+  connectionTimeout: 10000
+  
+  # Response timeout in ms
+  responseTimeout: 30000
+
+# Tool-specific settings
+tools:
+  # Which tools to generate scripts for
+  enabled:
+    - jmeter
+    - k6
+    - gatling
+  
+  jmeter:
+    # JMeter-specific options
+    protocol: "https"
+    
+  k6:
+    # k6-specific options
+    vus: 10 # Virtual users
+    
+  gatling:
+    # Gatling-specific options
+    simulation: "PerfWeaverSimulation"
+    
+  locust:
+    # Locust-specific options
+    hatchRate: 2
+    
+  playwright:
+    # Playwright-specific options
+    headless: true
+
+# Logging and output
+output:
+  # Output directory for generated scripts
+  directory: "./scripts"
+  
+  # Log level (debug, info, warn, error)
+  logLevel: "info"
+  
+  # Generate source maps
+  sourceMaps: true
+  
+  # Pretty-print generated code
+  formatCode: true
