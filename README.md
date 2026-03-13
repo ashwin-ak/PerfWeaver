@@ -1,10 +1,10 @@
 # PerfWeaver
 
-[![npm version](https://img.shields.io/npm/v/perfweaver.svg)](https://www.npmjs.com/package/perfweaver) [![Build Status](https://img.shields.io/github/actions/workflow/status/ashwinkumarkulkarni/perfweaver/ci.yml?branch=main)](https://github.com/ashwinkumarkulkarni/perfweaver/actions) [![License](https://img.shields.io/npm/l/perfweaver.svg)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/perfweaver.svg)](https://www.npmjs.com/package/perfweaver) [![Build Status](https://img.shields.io/github/actions/workflow/status/ashwin-ak/perfweaver/ci.yml?branch=main)](https://github.com/ashwink-ak/perfweaver/actions) [![License](https://img.shields.io/npm/l/perfweaver.svg)](LICENSE)
 
 Convert browser HAR (HTTP Archive) traffic into structured load-testing scripts for multiple performance testing tools.
 
-> **GitHub:** https://github.com/ashwinkumarkulkarni/perfweaver   
+> **GitHub:** https://github.com/ashwin-ak/perfweaver   
 > **npm:** https://www.npmjs.com/package/perfweaver
 
 

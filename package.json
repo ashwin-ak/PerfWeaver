@@ -1,6 +1,6 @@
 {
   "name": "perfweaver",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convert browser HAR traffic into structured load-testing scripts for JMeter, k6, Gatling, Locust, and Playwright",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
