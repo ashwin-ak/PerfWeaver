@@ -10,9 +10,24 @@ import * as visualizeCommand from './commands/visualize.command';
  */
 export async function runCLI(args?: string[]): Promise<void> {
   const argv = await yargs(args || hideBin(process.argv))
-    .command(generateCommand.handler as any)
-    .command(analyzeCommand.handler as any)
-    .command(visualizeCommand.handler as any)
+    .command({
+      command: generateCommand.command,
+      describe: generateCommand.describe,
+      builder: generateCommand.builder,
+      handler: generateCommand.handler,
+    })
+    .command({
+      command: analyzeCommand.command,
+      describe: analyzeCommand.describe,
+      builder: analyzeCommand.builder,
+      handler: analyzeCommand.handler,
+    })
+    .command({
+      command: visualizeCommand.command,
+      describe: visualizeCommand.describe,
+      builder: visualizeCommand.builder,
+      handler: visualizeCommand.handler,
+    })
     .option('config', {
       alias: 'c',
       describe: 'Path to perfweaver.config.yaml',

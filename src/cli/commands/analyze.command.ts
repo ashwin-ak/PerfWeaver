@@ -10,7 +10,7 @@ export const describe = 'Analyze HAR file and generate report';
 export const builder = {
   har: {
     describe: 'HAR file path',
-    type: 'string',
+    type: 'string' as const,
   },
 };
 

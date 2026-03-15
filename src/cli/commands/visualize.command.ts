@@ -7,7 +7,7 @@ export const describe = 'Visualize HAR behavior as text';
 export const builder = {
   har: {
     describe: 'HAR file path',
-    type: 'string',
+    type: 'string' as const,
   },
 };
 

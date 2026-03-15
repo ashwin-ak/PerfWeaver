@@ -17,22 +17,22 @@ export const describe = 'Generate load testing script from HAR file';
 export const builder = {
   tool: {
     describe: 'Target tool (jmeter, k6, gatling, locust, playwright)',
-    type: 'string',
+    type: 'string' as const,
     choices: ['jmeter', 'k6', 'gatling', 'locust', 'playwright'],
   },
   har: {
     describe: 'HAR file path',
-    type: 'string',
+    type: 'string' as const,
   },
   output: {
     alias: 'o',
     describe: 'Output file path',
-    type: 'string',
+    type: 'string' as const,
   },
   config: {
     alias: 'c',
     describe: 'Configuration file path',
-    type: 'string',
+    type: 'string' as const,
     default: './perfweaver.config.yaml',
   },
 };
