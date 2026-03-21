@@ -1,12 +1,26 @@
-# PerfWeaver
+<p align="center">
+  <img src="assets/perfweaver-logo.png" alt="PerfWeaver Logo" width="200"/>
+</p>
+<h1 align="center">PerfWeaver</h1>
+<p align="center">
+  Weaving real traffic into performance tests
+</p>
 
-[![npm version](https://img.shields.io/npm/v/perfweaver.svg)](https://www.npmjs.com/package/perfweaver) [![Build Status](https://img.shields.io/github/actions/workflow/status/ashwin-ak/perfweaver/ci.yml?branch=main)](https://github.com/ashwink-ak/perfweaver/actions) [![License](https://img.shields.io/npm/l/perfweaver.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/ashwin-ak/perfweaver">
+    <img src="https://img.shields.io/badge/GitHub-Repo-black?logo=github" />
+  </a>
+  <a href="https://github.com/ashwin-ak/perfweaver/LICENSE">
+    <img src="https://img.shields.io/github/license/ashwin-ak/perfweaver" />
+  </a>
+  <a href="https://www.npmjs.com/package/perfweaver">
+    <img src="https://img.shields.io/npm/v/perfweaver" />
+  </a>
+</p>
 
 Convert browser HAR (HTTP Archive) traffic into structured load-testing scripts for multiple performance testing tools.
 
-> **GitHub:** https://github.com/ashwin-ak/perfweaver   
-> **npm:** https://www.npmjs.com/package/perfweaver
-
+![PerfWeaver Flow](assets/PerfWeaver-flow.png)
 
 ## Features
 
@@ -59,7 +73,7 @@ npx perfweaver analyze example.har
 For development:
 
 ```bash
-git clone https://github.com/ashwinkumarkulkarni/perfweaver.git
+git clone https://github.com/ashwin-ak/perfweaver.git
 cd perfweaver
 npm install
 npm run build
