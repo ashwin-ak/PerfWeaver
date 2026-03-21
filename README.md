@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/perfweaver-logo.png" alt="PerfWeaver Logo" width="200"/>
+  <img src="assets/PerfWeaver-logo.png" alt="PerfWeaver Logo" width="200"/>
 </p>
 <h1 align="center">PerfWeaver</h1>
 <p align="center">
